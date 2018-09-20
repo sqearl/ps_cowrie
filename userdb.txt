@@ -1,0 +1,15 @@
+root:1:changeme
+pi:2:raspberry
+root:3:admin123
+root:4:zaq1xsw2
+root:5:apache
+root:6:anonymous
+root:7:motorola
+root:8:adm1n
+root:9:shadown
+admin:10:changeme
+admin:11:motorola
+root:12:anti
+root:13:aztecs
+admin:14:wqer!
+root:15:peavey
