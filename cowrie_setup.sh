@@ -13,6 +13,7 @@ wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/userdb.txt >> /ho
 sudo -u cowrie ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 cd /home/cowrie/cowrie
 sudo -u cowrie virtualenv cowrie-env/bin/activate 
+echo 'requests' >> requirements.txt
 pip install -r requirements.txt
 cd /home/cowrie/cowrie/etc/
 wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/cowrie.cfg
