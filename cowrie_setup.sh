@@ -31,4 +31,4 @@ sudo rm /tmp/tango/uf_only.sh
 cd /tmp/tango
 sudo wget https://raw.githubusercontent.com/sqearl/Tango/5f6bcb3429cf3a83e3d55882e6055274d6d974e1/uf_only.sh 
 sudo chmod +x uf_only.sh
-./uf_only.sh
+sudo ./uf_only.sh
