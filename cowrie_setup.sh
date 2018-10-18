@@ -29,6 +29,6 @@ sudo su cowrie -c '/home/cowrie/cowrie/bin/cowrie start'
 git clone https://github.com/aplura/Tango.git /tmp/tango
 sudo rm /tmp/tango/uf_only.sh
 cd /tmp/tango
-sudo wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/uf_only.sh
+sudo wget https://raw.githubusercontent.com/sqearl/Tango/1473828c8384cec54fab51ac4e3333bbb1846bef/uf_only.sh
 sudo chmod +x uf_only.sh
 sudo ./uf_only.sh
