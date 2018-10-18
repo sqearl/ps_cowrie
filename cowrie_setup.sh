@@ -4,7 +4,7 @@ apt-add-repository universe
 # Run the updates
 apt-get update -y && sudo apt-get upgrade -y
 # Collect the things
-apt-get install git software-properties-common python-virtualenv python-pip libmpfr-dev libssl-dev libffi-dev build-essential libpython-dev python2.7-minimal authbind -y
+apt-get install git software-properties-common python-virtualenv python-pip libmpfr-dev libcurl4-openssl-dev libssl-dev libffi-dev build-essential libpython-dev python2.7-minimal authbind -y
 adduser --disabled-password --gecos "" cowrie 
 cd /home/cowrie
 sudo -u cowrie git clone http://github.com/micheloosterhof/cowrie
@@ -14,6 +14,7 @@ sudo -u cowrie ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 cd /home/cowrie/cowrie
 sudo -u cowrie virtualenv cowrie-env/bin/activate 
 echo 'requests' >> requirements.txt
+sudo pip install --upgrade setuptools
 sudo pip install -r requirements.txt
 cd /home/cowrie/cowrie/etc/
 wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/cowrie.cfg
@@ -25,6 +26,8 @@ iptables-save | sudo tee /etc/iptables.conf
 echo "iptables-restore < /etc/iptables.conf" >> /etc/rc.local
 echo "su -c '/home/cowrie/cowrie/bin/cowrie start' -s /bin/sh cowrie" >> /etc/rc.local
 sudo su cowrie -c '/home/cowrie/cowrie/bin/cowrie start'
-git clone https://github.com/aplura/Tango.git /tmp/tango; sudo chmod +x /tmp/tango/uf_only.sh 
+git clone https://github.com/aplura/Tango.git /tmp/tango
+rm /tmp/tango/uf_only.sh
+wget https://raw.githubusercontent.com/sqearl/Tango/5f6bcb3429cf3a83e3d55882e6055274d6d974e1/uf_only.sh > /tmp/tango/uf_only.sh
 cd /tmp/tango
 ./uf_only.sh
