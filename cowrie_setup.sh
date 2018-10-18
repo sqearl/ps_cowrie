@@ -9,7 +9,8 @@ adduser --disabled-password --gecos "" cowrie
 cd /home/cowrie
 sudo -u cowrie git clone http://github.com/micheloosterhof/cowrie
 mkdir /home/cowrie/cowrie/data
-wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/userdb.txt >> /home/cowrie/cowrie/etc/userdb.txt
+cd /home/cowrie/cowrie/etc/
+sudo wget https://raw.githubusercontent.com/sqearl/ps_cowrie/master/userdb.txt
 sudo -u cowrie ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 cd /home/cowrie/cowrie
 sudo -u cowrie virtualenv cowrie-env/bin/activate 
