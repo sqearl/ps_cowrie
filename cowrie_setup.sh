@@ -29,5 +29,7 @@ echo "su -c '/home/cowrie/cowrie/bin/cowrie start' -s /bin/sh cowrie" >> /etc/rc
 sudo su cowrie -c '/home/cowrie/cowrie/bin/cowrie start'
 git clone https://github.com/aplura/Tango.git /tmp/tango
 cd /tmp/tango
+sudo rm uf_only.sh
+wget https://raw.githubusercontent.com/sqearl/Tango/master/uf_only.sh
 sudo chmod +x uf_only.sh
 sudo ./uf_only.sh
